@@ -8,6 +8,7 @@ import { ListComponent } from './list/list.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ListComponent,
     WeatherComponent,
     ProfileComponent,
-    NavBarComponent
+    NavBarComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule
