@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Hotel} from "./shared/Hotel";
 
 @Component({
   selector: 'hotels-app',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hotels-app';
+  title: string = 'hotels-app';
+
+  selectedHotel: Hotel;
+
+  /*handleHotelItemClicked(hotel: Hotel) {
+    this.selectedHotel = hotel;
+    console.log("App: I know, what hotel clicked: " + hotel.title);
+  }*/
 }

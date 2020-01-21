@@ -6,9 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ListComponent } from './list/list.component';
 import { WeatherComponent } from './weather/weather.component';
-import { ProfileComponent } from './profile/profile.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MenuComponent } from './menu/menu.component';
+import { HotelCardComponent } from './hotel-card/hotel-card.component';
+import { HotelItemComponent } from './hotel-item/hotel-item.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +18,10 @@ import { MenuComponent } from './menu/menu.component';
     FooterComponent,
     ListComponent,
     WeatherComponent,
-    ProfileComponent,
     NavBarComponent,
-    MenuComponent
+    MenuComponent,
+    HotelCardComponent,
+    HotelItemComponent
   ],
   imports: [
     BrowserModule

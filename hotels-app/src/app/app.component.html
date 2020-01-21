@@ -44,12 +44,13 @@
 
 <div class="element">
   <div class="element-left">
-    <app-menu></app-menu>
+    <!--<app-menu (hotelClicked)="handleHotelItemClicked($event)"></app-menu>-->
+    <app-menu (hotelClicked)="this.selectedHotel = $event"></app-menu>
   </div>
 
   <div class="element-right">
-    <app-weather></app-weather>
-    <app-profile></app-profile>
+    <app-weather *ngIf="selectedHotel" [weather]="selectedHotel.weather"></app-weather>
+    <app-hotel-card *ngIf="selectedHotel" [hotelProfile]="selectedHotel.profile"></app-hotel-card>
   </div>
   <div class="clear"></div>
 </div>
