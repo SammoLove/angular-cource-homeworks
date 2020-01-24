@@ -10,6 +10,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MenuComponent } from './menu/menu.component';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
 import { HotelItemComponent } from './hotel-item/hotel-item.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HotelItemComponent } from './hotel-item/hotel-item.component';
     HotelItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
