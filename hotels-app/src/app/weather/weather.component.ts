@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Hotel} from "../shared/Hotel";
+import {IHotel} from "../shared/IHotel";
 
 @Component({
   selector: 'app-weather',
@@ -9,7 +9,7 @@ import {Hotel} from "../shared/Hotel";
 export class WeatherComponent implements OnInit {
 
   @Input()
-  weather: Hotel["weather"];
+  weather: IHotel["weather"];
 
   ngOnInit() {
   }

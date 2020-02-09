@@ -1,4 +1,4 @@
-export class Hotel {
+export interface IHotel {
   id: number;
   title: string;
   address: string;

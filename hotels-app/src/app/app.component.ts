@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {Hotel} from "./shared/Hotel";
+import {IHotel} from "./shared/IHotel";
+import {MatInputModule} from '@angular/material/input';
 
 @Component({
   selector: 'hotels-app',
@@ -9,10 +10,13 @@ import {Hotel} from "./shared/Hotel";
 export class AppComponent {
   title: string = 'hotels-app';
 
-  selectedHotel: Hotel;
+  selectedHotel: IHotel;
 
   /*handleHotelItemClicked(hotel: Hotel) {
     this.selectedHotel = hotel;
     console.log("App: I know, what hotel clicked: " + hotel.title);
   }*/
+  findIt(param: any) {
+    console.log(param);
+  }
 }

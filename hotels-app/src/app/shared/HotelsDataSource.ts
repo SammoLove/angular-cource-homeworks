@@ -1,7 +1,7 @@
-import {Hotel} from "./Hotel";
+import {IHotel} from "./IHotel";
 
 export class HotelsDataSource {
-  static hotelsData: Hotel[] = [
+  static mockedHotels: IHotel[] = [
     {
       id: 0,
       title: 'Universal Cabana',

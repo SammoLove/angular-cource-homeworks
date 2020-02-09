@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Hotel} from "../shared/Hotel";
+import {IHotel} from "../shared/IHotel";
 
 @Component({
   selector: 'app-hotel-card',
@@ -8,7 +8,7 @@ import {Hotel} from "../shared/Hotel";
 })
 export class HotelCardComponent implements OnInit {
 
-  @Input() hotelProfile : Hotel["profile"];
+  @Input() hotelProfile : IHotel["profile"];
 
   ngOnInit() {
   }

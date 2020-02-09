@@ -43,9 +43,11 @@
 <app-header></app-header>
 
 <div class="element">
-  <mat-form-field>
-    <input matInput placeholder="Favorite food" value="Sushi">
-  </mat-form-field>
+  <mat-card class="search-card">
+    <mat-form-field>
+      <input matInput (input)="findIt($event.target)" placeholder="Hotel name" value="">
+    </mat-form-field>
+  </mat-card>
 </div>
 
 <div class="element">

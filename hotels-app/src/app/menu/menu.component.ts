@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Hotel} from "../shared/Hotel";
+import {IHotel} from "../shared/IHotel";
 import {HotelsDataSource} from "../shared/HotelsDataSource";
 
 @Component({
@@ -8,9 +8,9 @@ import {HotelsDataSource} from "../shared/HotelsDataSource";
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  hotels: Hotel[] = HotelsDataSource.hotelsData;
+  hotels: IHotel[] = HotelsDataSource.mockedHotels;
 
-  @Output() public hotelClicked: EventEmitter<Hotel> = new EventEmitter();
+  @Output() public hotelClicked: EventEmitter<IHotel> = new EventEmitter();
   selectedHotelPhoto: string;
 
   ngOnInit() {
