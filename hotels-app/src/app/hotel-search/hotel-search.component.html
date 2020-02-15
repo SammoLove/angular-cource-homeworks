@@ -1,0 +1,7 @@
+<div class="element">
+  <mat-card class="search-card">
+    <mat-form-field>
+      <input matInput #searchString (input)="findIt(searchString.value)" placeholder="Hotel name" value="">
+    </mat-form-field>
+  </mat-card>
+</div>
