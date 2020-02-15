@@ -14,6 +14,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
 import { HotelSearchComponent } from './hotel-search/hotel-search.component';
 import {HotelsPipe} from "./menu/hotels-filter.pipe";
+import {StarsPipe} from "./menu/stars-filter.pipe";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HotelsPipe} from "./menu/hotels-filter.pipe";
     HotelCardComponent,
     HotelItemComponent,
     HotelSearchComponent,
-    HotelsPipe
+    HotelsPipe,
+    StarsPipe
   ],
   imports: [
     BrowserModule,

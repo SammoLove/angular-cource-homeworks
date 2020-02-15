@@ -1,6 +1,6 @@
 <div class="element-bg-img"><img [src]="selectedHotelPhoto" alt="" class="img-responsive"></div>
 <div class="element-left-bottom">
-  <app-nav-bar></app-nav-bar>
+  <app-nav-bar (starsEventEmitter)="this.stars = $event"></app-nav-bar>
   <div class="village">
     <h3>Righteous indignation & like</h3>
     <span class="line"> </span>
@@ -8,7 +8,7 @@
       <div class="scrollbar" id="style-2">
 
         <app-hotel-item
-          *ngFor="let hotel of (hotels | hotelsPipe: hotelNameSearchString )"
+          *ngFor="let hotel of (hotels | hotelsPipe: hotelNameSearchString | starsPipe: stars)"
           [hotel]="hotel"
           (click)="hotelClicked.emit(hotel); this.selectedHotelPhoto = hotel.picture"
         ></app-hotel-item>

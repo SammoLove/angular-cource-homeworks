@@ -1,8 +1,8 @@
 <div class="ele-strip">
   <ul>
-    <li><a href="#">All</a></li>
-    <li><a href="#">3*</a></li>
-    <li><a href="#">4*</a></li>
-    <li class="anc-bor"><a href="#">5*</a></li>
+    <li><a (click)='starsEventEmitter.emit(0)' href="#">All</a></li>
+    <li><a (click)='starsEventEmitter.emit(3)' href="#">3*</a></li>
+    <li><a (click)='starsEventEmitter.emit(4)' href="#">4*</a></li>
+    <li><a (click)='starsEventEmitter.emit(5)' href="#">5*</a></li>
   </ul>
 </div>
