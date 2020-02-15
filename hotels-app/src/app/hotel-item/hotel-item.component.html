@@ -4,6 +4,7 @@
     <p>{{hotel.description}}</p>
     <p>{{hotel.address}}</p>
     <h6>Tel:{{hotel.phone}}</h6>
+    <a (click)="favouriteEmitter.emit(this.hotel)" href="#">Favourite!</a>
   </div>
   <div class="activity-img">
     <ul>

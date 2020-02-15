@@ -11,6 +11,7 @@
           *ngFor="let hotel of (hotels | hotelsPipe: hotelNameSearchString | starsPipe: stars)"
           [hotel]="hotel"
           (click)="hotelClicked.emit(hotel); this.selectedHotelPhoto = hotel.picture"
+          (favouriteEmitter)="favouriteEmitter.emit($event)"
         ></app-hotel-item>
 
       </div>

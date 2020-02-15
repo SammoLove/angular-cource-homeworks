@@ -15,6 +15,7 @@ import {MatCardModule} from "@angular/material/card";
 import { HotelSearchComponent } from './hotel-search/hotel-search.component';
 import {HotelsPipe} from "./menu/hotels-filter.pipe";
 import {StarsPipe} from "./menu/stars-filter.pipe";
+import { FavouriteHotelsComponent } from './favourite-hotels/favourite-hotels.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {StarsPipe} from "./menu/stars-filter.pipe";
     HotelItemComponent,
     HotelSearchComponent,
     HotelsPipe,
-    StarsPipe
+    StarsPipe,
+    FavouriteHotelsComponent
   ],
   imports: [
     BrowserModule,

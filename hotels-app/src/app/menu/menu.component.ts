@@ -17,6 +17,8 @@ export class MenuComponent implements OnInit {
   @Output() public hotelClicked: EventEmitter<IHotel> = new EventEmitter();
   selectedHotelPhoto: string;
 
+  @Output() private favouriteEmitter: EventEmitter<IHotel> = new EventEmitter<IHotel>();
+
   ngOnInit() {
     this.hotelClicked.emit(this.hotels[0]);
     this.selectedHotelPhoto = this.hotels[0].picture;

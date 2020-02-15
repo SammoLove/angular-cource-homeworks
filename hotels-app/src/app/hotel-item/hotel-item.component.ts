@@ -12,7 +12,7 @@ export class HotelItemComponent implements OnInit {
   //чисто для наполения данными и отображения
   @Input() public hotel: IHotel;
 
-  //тупая карточка
+  @Output() private favouriteEmitter: EventEmitter<IHotel> = new EventEmitter<IHotel>();
 
   ngOnInit() {
   }

@@ -11,6 +11,8 @@ export class AppComponent {
 
   selectedHotel: IHotel;
 
+  favouriteHotel: IHotel;
+
   searchString: string;
 
   /*handleHotelItemClicked(hotel: Hotel) {

@@ -31,7 +31,10 @@
 
 <div class="element">
   <div class="element-left">
-    <app-menu [hotelNameSearchString]="this.searchString" (hotelClicked)="this.selectedHotel = $event"></app-menu>
+    <app-menu
+      [hotelNameSearchString]="this.searchString"
+      (hotelClicked)="this.selectedHotel = $event"
+      (favouriteEmitter)="this.favouriteHotel = $event"></app-menu>
   </div>
 
   <div class="element-right">
@@ -40,5 +43,7 @@
   </div>
   <div class="clear"></div>
 </div>
+
+<app-favourite-hotels [addToFavourite]="this.favouriteHotel"></app-favourite-hotels>
 
 <app-footer></app-footer>
