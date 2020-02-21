@@ -1,7 +1,15 @@
-import {IHotel} from "./IHotel";
+import {Injectable} from '@angular/core';
+import {IHotel} from "./shared/IHotel";
+import {Observable, of} from "rxjs";
 
-export class HotelsDataSource {
-  static mockedHotels: IHotel[] = [
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  public get hotels() : Observable<IHotel[]> {
+    return this.mockedHotels;
+  }
+  private mockedHotels: Observable<IHotel[]> = of([
     {
       id: 0,
       title: 'Universal Cabana',
@@ -71,5 +79,5 @@ export class HotelsDataSource {
       },
       stars: 5
     }
-  ];
+  ]);
 }

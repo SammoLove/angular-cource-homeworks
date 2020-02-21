@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IHotel} from "../shared/IHotel";
-import {HotelsDataSource} from "../shared/HotelsDataSource";
+import {DataService} from '../data.service';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-menu',
@@ -8,7 +9,9 @@ import {HotelsDataSource} from "../shared/HotelsDataSource";
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  private hotels: IHotel[] = HotelsDataSource.mockedHotels;
+  private hotels : IHotel[];
+
+  constructor(private dataService: DataService) {}
 
   @Input() stars: number;
 
@@ -20,7 +23,8 @@ export class MenuComponent implements OnInit {
   @Output() private favouriteEmitter: EventEmitter<IHotel> = new EventEmitter<IHotel>();
 
   ngOnInit() {
-    this.hotelClicked.emit(this.hotels[0]);
-    this.selectedHotelPhoto = this.hotels[0].picture;
+    console.log("hotels: " + );
+    this.hotelClicked.emit(hotels[0]);
+    this.selectedHotelPhoto = hotels[0].picture;
   }
 }
