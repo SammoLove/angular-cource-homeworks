@@ -1,15 +1,22 @@
 import {Injectable} from '@angular/core';
 import {IHotel} from "./shared/IHotel";
 import {Observable, of} from "rxjs";
+import {MessageService} from "./message.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  public get hotels() : Observable<IHotel[]> {
-    return this.mockedHotels;
+
+  constructor(private messageService: MessageService) { }
+
+  public get hotels(): Observable<IHotel[]> {
+    this.messageService.add('DaraService: fetched hotels');
+    return this.hotels$;
   }
-  private mockedHotels: Observable<IHotel[]> = of([
+
+  private hotels$: Observable<IHotel[]> = of(DataService.mockedHotels);
+  private static mockedHotels: IHotel[] = [
     {
       id: 0,
       title: 'Universal Cabana',
@@ -79,5 +86,5 @@ export class DataService {
       },
       stars: 5
     }
-  ]);
+  ];
 }

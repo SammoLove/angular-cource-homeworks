@@ -16,6 +16,7 @@ import { HotelSearchComponent } from './hotel-search/hotel-search.component';
 import {HotelsPipe} from "./menu/hotels-filter.pipe";
 import {StarsPipe} from "./menu/stars-filter.pipe";
 import { FavouriteHotelsComponent } from './favourite-hotels/favourite-hotels.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FavouriteHotelsComponent } from './favourite-hotels/favourite-hotels.co
     HotelSearchComponent,
     HotelsPipe,
     StarsPipe,
-    FavouriteHotelsComponent
+    FavouriteHotelsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

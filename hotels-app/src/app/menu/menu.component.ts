@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IHotel} from "../shared/IHotel";
 import {DataService} from '../data.service';
 import {Observable} from "rxjs";
+import {MessageService} from "../message.service";
 
 @Component({
   selector: 'app-menu',
@@ -9,22 +10,35 @@ import {Observable} from "rxjs";
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  private hotels : IHotel[];
+  private hotels: IHotel[];
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService,
+              private messageService: MessageService) {
+  }
+
+  private getHotels(): void {
+    this.dataService.hotels.subscribe(hotels => this.hotels = hotels);
+  }
 
   @Input() stars: number;
 
-  @Input() hotelNameSearchString : string;
+  @Input() hotelNameSearchString: string;
 
   @Output() public hotelClicked: EventEmitter<IHotel> = new EventEmitter();
   selectedHotelPhoto: string;
 
+  onHotelSelected(hotel: IHotel): void {
+    this.hotelClicked.emit(hotel);
+    this.selectedHotelPhoto = hotel.picture
+    this.messageService.add(`Menu: Selected hotel id=${hotel.id}`);
+  }
+
   @Output() private favouriteEmitter: EventEmitter<IHotel> = new EventEmitter<IHotel>();
 
   ngOnInit() {
-    console.log("hotels: " + );
-    this.hotelClicked.emit(hotels[0]);
-    this.selectedHotelPhoto = hotels[0].picture;
+    this.getHotels();
+    console.log("hotels: " + this.hotels.length);
+    this.hotelClicked.emit(this.hotels[0]);
+    this.selectedHotelPhoto = this.hotels[0].picture;
   }
 }
