@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {IHotel} from "./shared/IHotel";
 import {Observable, of} from "rxjs";
 import {MessageService} from "./message.service";
+import {delay} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class DataService {
     return this.hotels$;
   }
 
-  private hotels$: Observable<IHotel[]> = of(DataService.mockedHotels);
+  private hotels$: Observable<IHotel[]> = of(DataService.mockedHotels).pipe(delay(2000));
   private static mockedHotels: IHotel[] = [
     {
       id: 0,

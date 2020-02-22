@@ -37,8 +37,10 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.getHotels();
-    console.log("hotels: " + this.hotels.length);
-    this.hotelClicked.emit(this.hotels[0]);
-    this.selectedHotelPhoto = this.hotels[0].picture;
+    this.dataService.hotels.subscribe(hotels => {
+      console.log("hotels: " + this.hotels.length);
+      this.hotelClicked.emit(this.hotels[0]);
+      this.selectedHotelPhoto = this.hotels[0].picture;
+    });
   }
 }
