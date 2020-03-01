@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IHotel} from "../shared/IHotel";
-import {DataService} from '../data.service';
+import {DataSourceService} from '../services/data-source.service';
 import {Observable} from "rxjs";
-import {MessageService} from "../message.service";
+import {MessageService} from "../services/message.service";
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +12,7 @@ import {MessageService} from "../message.service";
 export class MenuComponent implements OnInit {
   private hotels: IHotel[];
 
-  constructor(private dataService: DataService,
+  constructor(private dataService: DataSourceService,
               private messageService: MessageService) {
   }
 

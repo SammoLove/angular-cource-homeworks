@@ -1,22 +1,28 @@
 import {Injectable} from '@angular/core';
-import {IHotel} from "./shared/IHotel";
+import {IHotel} from "../shared/IHotel";
 import {Observable, of} from "rxjs";
 import {MessageService} from "./message.service";
 import {delay} from "rxjs/operators";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataSourceService {
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService,
+              private http: HttpClient) {
+  }
 
   public get hotels(): Observable<IHotel[]> {
     this.messageService.add('DaraService: fetched hotels');
     return this.hotels$;
   }
 
-  private hotels$: Observable<IHotel[]> = of(DataService.mockedHotels).pipe(delay(2000));
+  //private hotels$: Observable<IHotel[]> = of(DataSourceService.mockedHotels).pipe(delay(2000));
+
+  private hotels$: Observable<IHotel[]> = this.http.get<IHotel[]>("localhost:3000/hotels").pipe(delay(1500));
+
   private static mockedHotels: IHotel[] = [
     {
       id: 0,

@@ -17,6 +17,7 @@ import {HotelsPipe} from "./menu/hotels-filter.pipe";
 import {StarsPipe} from "./menu/stars-filter.pipe";
 import { FavouriteHotelsComponent } from './favourite-hotels/favourite-hotels.component';
 import { MessagesComponent } from './messages/messages.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MessagesComponent } from './messages/messages.component';
     BrowserModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
