@@ -33,7 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     HotelsPipe,
     StarsPipe,
     FavouriteHotelsComponent,
-    MessagesComponent
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,

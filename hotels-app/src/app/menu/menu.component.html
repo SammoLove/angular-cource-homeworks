@@ -8,7 +8,7 @@
       <div class="scrollbar" id="style-2">
 
         <app-hotel-item
-          *ngFor="let hotel of (hotels | hotelsPipe: hotelNameSearchString | starsPipe: stars)"
+          *ngFor="let hotel of (hotels$ | async | hotelsPipe: hotelNameSearchString | starsPipe: stars)"
           [hotel]="hotel"
           (click)="onHotelSelected(hotel)"
           (favouriteEmitter)="favouriteEmitter.emit($event)"

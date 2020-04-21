@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IHotel} from "../shared/IHotel";
 import {DataSourceService} from '../services/data-source.service';
-import {Observable} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 import {MessageService} from "../services/message.service";
 
 @Component({
@@ -10,14 +10,13 @@ import {MessageService} from "../services/message.service";
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  private hotels: IHotel[];
+  //private hotels: IHotel[];
+  private hotels$: Observable<IHotel[]>;
+  private subscription: Subscription;
+
 
   constructor(private dataService: DataSourceService,
               private messageService: MessageService) {
-  }
-
-  private getHotels(): void {
-    this.dataService.hotels.subscribe(hotels => this.hotels = hotels);
   }
 
   @Input() stars: number;
@@ -36,11 +35,16 @@ export class MenuComponent implements OnInit {
   @Output() private favouriteEmitter: EventEmitter<IHotel> = new EventEmitter<IHotel>();
 
   ngOnInit() {
-    this.getHotels();
-    this.dataService.hotels.subscribe(hotels => {
-      console.log("hotels: " + this.hotels.length);
-      this.hotelClicked.emit(this.hotels[0]);
-      this.selectedHotelPhoto = this.hotels[0].picture;
+    //this.getHotels();
+    this.hotels$ = this.dataService.hotels;
+    this.subscription = this.hotels$.subscribe(hotels => {
+      //console.log("hotels: " + this.hotels.length);
+      this.hotelClicked.emit(hotels[0]);
+      this.selectedHotelPhoto = hotels[0].picture;
     });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

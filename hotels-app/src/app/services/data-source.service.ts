@@ -21,7 +21,7 @@ export class DataSourceService {
 
   //private hotels$: Observable<IHotel[]> = of(DataSourceService.mockedHotels).pipe(delay(2000));
 
-  private hotels$: Observable<IHotel[]> = this.http.get<IHotel[]>("localhost:3000/hotels").pipe(delay(1500));
+  private hotels$: Observable<IHotel[]> = this.http.get<IHotel[]>("http://localhost:3000/hotels").pipe(delay(1000));
 
   private static mockedHotels: IHotel[] = [
     {
